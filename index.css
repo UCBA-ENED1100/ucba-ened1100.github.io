@@ -1,9 +1,4 @@
-.sidebar a:hover,
-.sidebar a:focus,
-.sidebar a:active {
-    color: white;
-}
-
+/* Sidebar Styles */
 .sidebar {
     height: 100vh;
     overflow-y: auto;
@@ -11,8 +6,18 @@
 
 .sidebar a {
     color: white;
+    text-decoration: none;
+    transition: color 0.2s ease;
 }
 
+.sidebar a:hover,
+.sidebar a:focus,
+.sidebar a:active {
+    color: white;
+    opacity: 0.8;
+}
+
+/* Layout Styles */
 html {
     overflow: hidden;
     height: 100%;
@@ -27,7 +32,38 @@ main {
     background-color: #b50000;
 }
 
+/* Content Styles */
 .header,
 .main-content {
     background-color: white;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 767.98px) {
+    .sidebar {
+        height: auto;
+        overflow-y: visible;
+    }
+    
+    main {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+    }
+}
+
+/* Accessibility Improvements */
+a:focus {
+    outline: 2px solid #007bff;
+    outline-offset: 2px;
+}
+
+/* Print Styles */
+@media print {
+    .sidebar {
+        display: none;
+    }
+    
+    main {
+        margin-left: 0 !important;
+    }
 }
